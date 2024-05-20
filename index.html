@@ -8,6 +8,9 @@
   <title>Identity</title>
   <link rel="icon" href="favicon.ico" type="image/x-icon">
   <style>
+    * {
+      box-sizing: border-box;
+    }
     body {
       display: flex;
       flex-direction: column;
@@ -30,15 +33,37 @@
           linear-gradient(90deg, black 1px, transparent 1px);
       background-size: 50px 20px, 50px 20px;
     }
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+      z-index: 1;
+      background-color: black;
+      height: 40px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: flex-end;
+      padding: 0 20px;
+    }
+    a.netlify-identity-button {
+      color: white;
+    }
     img {
       width: 500px;
       max-width: calc(100% - 40px);
       max-height: calc(100% - 40px);
     }
   </style>
+  <script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 
 <body>
+  <header>
+    <div data-netlify-identity-button></div>
+  </header>
   <img src="homer.gif" alt="Homer Simpson">
 </body>
 
